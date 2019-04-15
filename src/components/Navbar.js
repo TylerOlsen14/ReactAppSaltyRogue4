@@ -1,75 +1,53 @@
-import React, { Component, Link } from "react";
+import React, { Component } from "react";
+import { Router, Route } from 'react-router-dom';
+import logo from '../logo.jpg'
 
 export class Navbar extends Component {
   render() {
     return (
-      <div>
+        <Router>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <img src={ logo } alt='Salty Rogue Real Estate'></img>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                <Link class="nav-link" href="#">
-                  Home <span class="sr-only">(current)</span>
-                </Link>
+                <Route class="nav-Route" exact path="/" component={Home}>
+                  Home
+                </Route>
               </li>
               <li class="nav-item">
-                <Link class="nav-link" href="#">
-                  Link
-                </Link>
+                <Route class="nav-Route" path='./About.js' component={About}>
+                  About
+                </Route>
               </li>
               <li class="nav-item dropdown">
-                <Link
-                  class="nav-link dropdown-toggle"
-                  href="#"
+                <Route
+                  class="nav-Route dropdown-toggle"
                   id="navbarDropdown"
                   role="button"
                   data-toggle="dropdown"
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
-                  Dropdown
-                </Link>
+                  Current Projects
+                </Route>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <Link class="dropdown-item" href="#">
-                    Action
-                  </Link>
-                  <Link class="dropdown-item" href="#">
-                    Another action
-                  </Link>
+                  <Route class="dropdown-item" path="./Projects/Projects.js">
+                    Lehi 1
+                  </Route>
+                  <Route class="dropdown-item" path="./Projects/Projects.js">
+                    Lehi 2
+                  </Route>
                   <div class="dropdown-divider" />
-                  <Link class="dropdown-item" href="#">
-                    Something else here
-                  </Link>
+                  <Route class="dropdown-item" path="./Projects/Projects.js">
+                    Provo 1
+                  </Route>
                 </div>
               </li>
-              <li class="nav-item">
-                <Link
-                  class="nav-link disabled"
-                  href="#"
-                  tabindex="-1"
-                  aria-disabled="true"
-                >
-                  Disabled
-                </Link>
-              </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-              <input
-                class="form-control mr-sm-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button
-                class="btn btn-outline-success my-2 my-sm-0"
-                type="submit"
-              >
-                Search
-              </button>
-            </form>
           </div>
         </nav>
-      </div>
+        </Router>
     );
   }
 }
