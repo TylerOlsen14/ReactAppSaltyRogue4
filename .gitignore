@@ -24,3 +24,6 @@ yarn-error.log*
 server/nodetest1/node_modules
 server/nodetest2/node_modules
 server/node_modules
+server/node.server.draft/node_modules
+server/node.server.draft/nodetest1/node_modules
+server/node.server.draft/nodetest2/node_modules
