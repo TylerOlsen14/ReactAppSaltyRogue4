@@ -120,4 +120,4 @@ function addUser(event) {
       alert('Please fill in all fields');
       return false;
     }
-  });
+});
